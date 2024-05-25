@@ -1,0 +1,49 @@
+import numpy as np
+# First, Save and Write Files using NumPy
+# Second, Load data from files using Numpy:
+# Here are three examples of it:
+
+# No.1
+
+# Create an array
+data = np.array([[2, 4, 6], [8, 10, 12]])
+
+# Save the array to a text file
+np.savetxt('data.txt', data)
+
+# Load data from a text file
+data_loaded = np.loadtxt('data.txt')
+
+print(data_loaded)
+
+# No.2
+
+# Create an array
+data = np.array([[14, 16, 18], [20, 22, 24]])
+
+# Save the array to a binary file
+np.save('data.npy', data)
+
+# Load data from a binary file
+data_loaded = np.load('data.npy')
+
+print(data_loaded)
+
+# No.3
+
+# Create arrays
+array1 = np.array([26, 28, 30])
+array2 = np.array([32, 34, 36])
+
+# Save arrays to a single binary file
+np.savez('data.npz', array1=array1, array2=array2)
+
+# Load data from a .npz file
+loaded_data = np.load('data.npz')
+
+# Access individual arrays
+array1_loaded = loaded_data['array1']
+array2_loaded = loaded_data['array2']
+
+print(array1_loaded)
+print(array2_loaded)
